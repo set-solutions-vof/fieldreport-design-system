@@ -1,0 +1,11 @@
+{
+  "name": "@fieldreport/design-system",
+  "version": "0.1.0",
+  "description": "Design tokens and brand assets for the FieldReport product suite",
+  "license": "UNLICENSED",
+  "private": true,
+  "files": [
+    "tokens.css",
+    "brand/"
+  ]
+}
