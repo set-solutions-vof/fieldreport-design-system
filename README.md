@@ -9,7 +9,7 @@ tokens.css    — All design tokens as CSS custom properties (--fr-*)
 brand/        — Logo lockups, marks, and favicons (SVG + PNG)
 ```
 
-React components live in [fieldreport-frontend](https://github.com/jamiesimmers-groupone/fieldreport-frontend) for now, alongside the app that uses them. They'll be extracted here when a second app needs them.
+React components live in [fieldreport-frontend](https://github.com/set-solutions-vof/fieldreport-frontend) for now, alongside the app that uses them. They'll be extracted here when a second app needs them.
 
 ---
 
@@ -19,17 +19,17 @@ For any app or prototype that needs the FieldReport token set, import directly f
 
 ```html
 <!-- In HTML -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jamiesimmers-groupone/fieldreport-design-system@main/tokens.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/set-solutions-vof/fieldreport-design-system@main/tokens.css" />
 ```
 
 ```css
 /* In CSS */
-@import url('https://cdn.jsdelivr.net/gh/jamiesimmers-groupone/fieldreport-design-system@main/tokens.css');
+@import url('https://cdn.jsdelivr.net/gh/set-solutions-vof/fieldreport-design-system@main/tokens.css');
 ```
 
 ```js
 // In a bundler (Vite, webpack, etc.)
-import 'https://cdn.jsdelivr.net/gh/jamiesimmers-groupone/fieldreport-design-system@main/tokens.css'
+import 'https://cdn.jsdelivr.net/gh/set-solutions-vof/fieldreport-design-system@main/tokens.css'
 ```
 
 Pin to a specific commit for production stability:
