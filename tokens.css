@@ -27,19 +27,19 @@
   --fr-color-neutral-950: oklch(11.5% 0.004 264);
 
   /* -----------------------------------------------------------------------
-     COLOR — Accent scale (restrained indigo, single hue)
+     COLOR — Accent scale (+38% chroma vs previous — more decisive, not decorative)
      ----------------------------------------------------------------------- */
-  --fr-color-accent-50: oklch(97.5% 0.012 264);
-  --fr-color-accent-100: oklch(94% 0.03 264);
-  --fr-color-accent-200: oklch(88% 0.06 264);
-  --fr-color-accent-300: oklch(80% 0.1 264);
-  --fr-color-accent-400: oklch(68% 0.14 264);
-  --fr-color-accent-500: oklch(55% 0.16 264);
-  --fr-color-accent-600: oklch(48% 0.155 264);
-  --fr-color-accent-700: oklch(40% 0.14 264);
-  --fr-color-accent-800: oklch(32% 0.11 264);
-  --fr-color-accent-900: oklch(24% 0.08 264);
-  --fr-color-accent-950: oklch(16% 0.05 264);
+  --fr-color-accent-50: oklch(97.5% 0.017 264);
+  --fr-color-accent-100: oklch(94% 0.04 264);
+  --fr-color-accent-200: oklch(88% 0.082 264);
+  --fr-color-accent-300: oklch(80% 0.14 264);
+  --fr-color-accent-400: oklch(68% 0.19 264);
+  --fr-color-accent-500: oklch(55% 0.22 264);
+  --fr-color-accent-600: oklch(48% 0.21 264);
+  --fr-color-accent-700: oklch(40% 0.19 264);
+  --fr-color-accent-800: oklch(32% 0.15 264);
+  --fr-color-accent-900: oklch(24% 0.11 264);
+  --fr-color-accent-950: oklch(16% 0.07 264);
   --fr-color-accent-soft: #eff4ff;
 
   /* -----------------------------------------------------------------------
@@ -76,6 +76,10 @@
   --fr-surface-sunken: var(--fr-color-neutral-100);
   --fr-surface-hover: var(--fr-color-neutral-100);
   --fr-surface-active: var(--fr-color-neutral-200);
+
+  /* Sidebar — dark zone surface tokens */
+  --fr-surface-sidebar: oklch(14% 0.025 264);
+  --fr-surface-sidebar-hover: oklch(22% 0.028 264);
 
   --fr-border: var(--fr-color-neutral-200);
   --fr-border-strong: var(--fr-color-neutral-300);
@@ -159,26 +163,34 @@
     'Liberation Mono', monospace;
 
   /* Size scale (rem). Base = 14px for desktop data density. */
-  --fr-text-xs: 0.75rem; /* 12 / labels, badges */
-  --fr-text-sm: 0.8125rem; /* 13 / secondary, helper */
+  --fr-text-xs: 0.6875rem;  /* 11 / labels uppercase */
+  --fr-text-sm: 0.8125rem;  /* 13 / secondary, helper */
   --fr-text-base: 0.875rem; /* 14 / body */
-  --fr-text-md: 1rem; /* 16 / emphasis body */
-  --fr-text-lg: 1.125rem; /* 18 / section title */
-  --fr-text-xl: 1.375rem; /* 22 / page title */
-  --fr-text-2xl: 1.75rem; /* 28 / hero numbers */
-  --fr-text-3xl: 2.25rem; /* 36 / display */
+  --fr-text-md: 1rem;       /* 16 / emphasis body */
+  --fr-text-lg: 1.25rem;    /* 20 / section title */
+  --fr-text-xl: 1.625rem;   /* 26 / page title */
+  --fr-text-2xl: 1.75rem;   /* 28 / hero numbers */
+  --fr-text-3xl: 2.25rem;   /* 36 / display */
 
   /* Weight scale */
   --fr-weight-regular: 400;
   --fr-weight-medium: 500;
   --fr-weight-semibold: 600;
   --fr-weight-bold: 700;
+  --fr-weight-extrabold: 800;
 
   /* Line height scale */
   --fr-leading-tight: 1.2;
   --fr-leading-snug: 1.35;
   --fr-leading-normal: 1.5;
   --fr-leading-relaxed: 1.65;
+
+  /* Letter spacing scale */
+  --fr-tracking-display: -0.03em;   /* 36px display headings */
+  --fr-tracking-title: -0.025em;    /* 26px page titles */
+  --fr-tracking-section: -0.015em;  /* 20px section headings */
+  --fr-tracking-label: 0.08em;      /* 11px uppercase labels */
+  --fr-tracking-normal: 0;          /* body, secondary */
 
   /* -----------------------------------------------------------------------
      SPACING — 4px base unit
@@ -247,6 +259,31 @@
   --fr-border-width-sm: 1px;
   --fr-meter-width-sm: 32px;
   --fr-document-paper-max-width: 1040px;
+}
+
+/* -----------------------------------------------------------------------
+   SIDEBAR DARK CONTEXT
+   Apply .fr-sidebar-dark to the sidebar element to scope all semantic
+   tokens within it to the dark surface. Child components (UserProfile,
+   nav items, badges) pick up overrides automatically via CSS cascade.
+   ----------------------------------------------------------------------- */
+.fr-sidebar-dark {
+  /* Surface and border */
+  --fr-surface: oklch(20% 0.022 264);
+  --fr-surface-raised: oklch(22% 0.024 264);
+  --fr-surface-sunken: oklch(16% 0.02 264);
+  --fr-surface-hover: var(--fr-surface-sidebar-hover);
+  --fr-surface-active: var(--fr-accent);
+  --fr-border: oklch(24% 0.02 264);
+
+  /* Text — lighter values for dark background */
+  --fr-text-primary: oklch(92% 0.005 264);
+  --fr-text-secondary: oklch(72% 0.01 264);
+  --fr-text-tertiary: oklch(44% 0.015 264);
+  --fr-text-disabled: oklch(35% 0.012 264);
+
+  /* Focus ring remains the same accent */
+  --fr-focus-ring: var(--fr-color-accent-400);
 }
 
 /* Optional: dark mode scaffold (light is primary for MVP).

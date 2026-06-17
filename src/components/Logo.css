@@ -71,13 +71,14 @@
   background: #fff;
 }
 .fr-logo--on-dark .fr-logo__glyph::after {
-  background: var(--fr-color-neutral-950);
+  /* Use the sidebar surface when available (inside .fr-sidebar-dark), else neutral-950 */
+  background: var(--fr-surface-sidebar, var(--fr-color-neutral-950));
 }
 .fr-logo--on-dark.fr-logo--accent .fr-logo__glyph {
   background: var(--fr-color-accent-400);
 }
 .fr-logo--on-dark.fr-logo--accent .fr-logo__glyph::after {
-  background: var(--fr-color-neutral-950);
+  background: var(--fr-surface-sidebar, var(--fr-color-neutral-950));
 }
 
 /* Mark-only (no wordmark) */
