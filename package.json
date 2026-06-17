@@ -1,6 +1,6 @@
 {
   "name": "@set-solutions-vof/design-system",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "Design tokens, brand assets, and React components for the FieldReport product suite",
   "license": "UNLICENSED",
   "private": false,
@@ -22,8 +22,14 @@
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
     },
-    "./dist/index.css": "./dist/index.css",
-    "./tokens.css": "./tokens.css"
+    "./dist/index.css": {
+      "import": "./dist/index.css",
+      "default": "./dist/index.css"
+    },
+    "./tokens.css": {
+      "import": "./tokens.css",
+      "default": "./tokens.css"
+    }
   },
   "files": [
     "dist",
