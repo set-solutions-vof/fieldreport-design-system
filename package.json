@@ -1,6 +1,6 @@
 {
   "name": "@set-solutions-vof/design-system",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Design tokens, brand assets, and React components for the FieldReport product suite",
   "license": "UNLICENSED",
   "private": false,
