@@ -14,24 +14,24 @@ brand/        — Logo lockups, marks, and favicons (SVG + PNG)
 
 ## Installing in a FieldReport app
 
-Published to GitHub Packages as `@fieldreport/design-system`.
+Published to GitHub Packages as `@set-solutions-vof/design-system`.
 
 Add `.npmrc` to the consuming app:
 
 ```
-@fieldreport:registry=https://npm.pkg.github.com
+@set-solutions-vof:registry=https://npm.pkg.github.com
 //npm.pkg.github.com/:_authToken=${NODE_AUTH_TOKEN}
 ```
 
 Set `NODE_AUTH_TOKEN` to a GitHub personal access token with `read:packages` scope.
 
 ```bash
-npm install @fieldreport/design-system
+npm install @set-solutions-vof/design-system
 ```
 
 ```ts
-import { Button, Input, Logo } from '@fieldreport/design-system'
-import '@fieldreport/design-system/dist/index.css'
+import { Button, Input, Logo } from '@set-solutions-vof/design-system'
+import '@set-solutions-vof/design-system/dist/index.css'
 ```
 
 ---

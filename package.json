@@ -1,6 +1,6 @@
 {
-  "name": "@fieldreport/design-system",
-  "version": "0.1.1",
+  "name": "@set-solutions-vof/design-system",
+  "version": "0.1.2",
   "description": "Design tokens, brand assets, and React components for the FieldReport product suite",
   "license": "UNLICENSED",
   "private": false,
@@ -11,7 +11,7 @@
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com",
-    "@fieldreport:registry": "https://npm.pkg.github.com"
+    "@set-solutions-vof:registry": "https://npm.pkg.github.com"
   },
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
