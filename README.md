@@ -5,11 +5,46 @@ Design tokens and brand assets for the FieldReport product suite. This is the si
 ## What's in here
 
 ```
+src/          — React components (Button, Input, Card, Logo, etc.)
 tokens.css    — All design tokens as CSS custom properties (--fr-*)
 brand/        — Logo lockups, marks, and favicons (SVG + PNG)
 ```
 
-React components live in [fieldreport-frontend](https://github.com/set-solutions-vof/fieldreport-frontend) for now, alongside the app that uses them. They'll be extracted here when a second app needs them.
+---
+
+## Installing in a FieldReport app
+
+Published to GitHub Packages as `@fieldreport/design-system`.
+
+Add `.npmrc` to the consuming app:
+
+```
+@fieldreport:registry=https://npm.pkg.github.com
+//npm.pkg.github.com/:_authToken=${NODE_AUTH_TOKEN}
+```
+
+Set `NODE_AUTH_TOKEN` to a GitHub personal access token with `read:packages` scope.
+
+```bash
+npm install @fieldreport/design-system
+```
+
+```ts
+import { Button, Input, Logo } from '@fieldreport/design-system'
+import '@fieldreport/design-system/dist/index.css'
+```
+
+---
+
+## Publishing
+
+`dist/` is built at publish time — it is not committed to git.
+
+1. Bump `version` in `package.json`
+2. Push to `main`
+3. Run the **Publish to GitHub Packages** workflow (Actions → workflow_dispatch), or create a GitHub Release
+
+`prepublishOnly` runs `npm run build` before the tarball is uploaded.
 
 ---
 
