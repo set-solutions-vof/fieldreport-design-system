@@ -1,11 +1,41 @@
 {
   "name": "@fieldreport/design-system",
   "version": "0.1.0",
-  "description": "Design tokens and brand assets for the FieldReport product suite",
+  "description": "Design tokens, brand assets, and React components for the FieldReport product suite",
   "license": "UNLICENSED",
-  "private": true,
+  "private": false,
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./dist/index.css": "./dist/index.css"
+  },
   "files": [
+    "dist",
     "tokens.css",
     "brand/"
-  ]
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --dts --no-splitting --external react --external react-dom --no-config",
+    "dev": "tsup --watch",
+    "prepare": "npm run build"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5",
+    "tsup": "^8.0.0",
+    "typescript": "~6.0.2"
+  }
 }
