@@ -1,3 +1,5 @@
+import { writeFileSync } from 'node:fs'
+import { generateDtsBundle } from 'dts-bundle-generator'
 import { defineConfig } from 'tsup'
 
 export default defineConfig({
@@ -9,4 +11,14 @@ export default defineConfig({
   clean: true,
   external: ['react', 'react-dom'],
   injectStyle: false,
+  async onSuccess() {
+    const [declarationBundle] = generateDtsBundle([
+      {
+        filePath: 'src/index.ts',
+        output: { noBanner: true },
+      },
+    ])
+    writeFileSync('dist/index.d.ts', declarationBundle)
+    writeFileSync('dist/index.d.cts', declarationBundle)
+  },
 })

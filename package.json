@@ -1,6 +1,6 @@
 {
   "name": "@set-solutions-vof/design-system",
-  "version": "0.1.2",
+  "version": "0.1.4",
   "description": "Design tokens, brand assets, and React components for the FieldReport product suite",
   "license": "UNLICENSED",
   "private": false,
@@ -30,7 +30,7 @@
     "brand/"
   ],
   "scripts": {
-    "build": "tsup && tsc --emitDeclarationOnly",
+    "build": "tsup",
     "dev": "tsup --watch",
     "prepublishOnly": "npm run build"
   },
@@ -43,7 +43,8 @@
     "@types/react-dom": "^19.0.0",
     "react": "^19.2.5",
     "react-dom": "^19.2.5",
-    "tsup": "^8.0.0",
+    "dts-bundle-generator": "^9.5.1",
+    "tsup": "^8.5.1",
     "typescript": "~6.0.2"
   }
 }
