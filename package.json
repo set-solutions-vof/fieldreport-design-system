@@ -30,7 +30,7 @@
     "brand/"
   ],
   "scripts": {
-    "build": "tsup src/index.ts --format esm,cjs --dts --no-splitting --external react --external react-dom --no-config",
+    "build": "tsup && tsc --emitDeclarationOnly",
     "dev": "tsup --watch",
     "prepublishOnly": "npm run build"
   },
