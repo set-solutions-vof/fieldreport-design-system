@@ -22,7 +22,8 @@
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
     },
-    "./dist/index.css": "./dist/index.css"
+    "./dist/index.css": "./dist/index.css",
+    "./tokens.css": "./tokens.css"
   },
   "files": [
     "dist",
